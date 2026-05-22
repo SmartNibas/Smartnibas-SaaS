@@ -1,21 +1,9 @@
-import Link from 'next/link';
-import { company, users } from '@/lib/data';
-
-export default function AdminUsersPage() {
-  return (
-    <main className="app-shell">
-      <header className="topbar"><div className="brand"><img src="/logo.png" alt="SmartNibas" /><span>Admin Panel<small>User approval and subscription control</small></span></div><nav className="nav"><Link href="/dashboard">Dashboard</Link></nav></header>
-      <section className="page">
-        <div className="card">
-          <h2>User Approval & Rental Access</h2>
-          <p>Admin remains free forever. Other users must be approved, then get 30-day trial or monthly/yearly rental subscription.</p>
-          <table>
-            <thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Status</th><th>Plan</th><th>Expiry</th><th>Action</th></tr></thead>
-            <tbody>{users.map((user) => <tr key={user.id}><td>{user.name}</td><td>{user.email}</td><td>{user.role}</td><td><span className={`status ${user.status}`}>{user.status}</span></td><td>{user.plan}</td><td>{user.expiry}</td><td><button className="btn" type="button">Approve / Extend</button></td></tr>)}</tbody>
-          </table>
-          <p style={{fontSize:12}}>API placeholders are included. Connect this page to MySQL after environment setup.</p>
-        </div>
-      </section>
-    </main>
-  );
-}
+import AppShell from '@/lib/AppShell';
+export default function Admin(){return <AppShell active="admin"><div className="page-head">
+  <div>
+    <h1>Admin Approval Center</h1>
+    <p>Approve users, control access, trial and subscription status.</p>
+  </div>
+  <button className="btn primary">Approve Selected</button>
+</div>
+  <section className="card"><table className="table"><thead><tr><th>User</th><th>Email</th><th>Trial</th><th>Plan</th><th>Status</th></tr></thead><tbody><tr><td>Arindam Sen</td><td>arindam@example.com</td><td>26 days left</td><td>Monthly</td><td><span className="badge warn">Pending Approval</span></td></tr><tr><td>Priya Das</td><td>priya@example.com</td><td>Active</td><td>Yearly</td><td><span className="badge">Approved</span></td></tr><tr><td>Demo User</td><td>demo@example.com</td><td>Expired</td><td>Monthly</td><td><span className="badge warn">Blocked</span></td></tr></tbody></table></section></AppShell>}
