@@ -1,1 +1,120 @@
-export default function Print(){return <><div className="printbar no-print"><button className="btn" onClick={()=>typeof window!=='undefined' && window.print()}>Direct Print</button><a className="btn primary" href="/dashboard">Back Dashboard</a></div><main className="print-page"><div className="sheet-head"><div><img src="/logo.png"/><h2>SmartNibas Automation Pvt. Ltd.</h2><p>www.smartnibas.com<br/>Aashiyana Bhaban, Door no 1B, Roypara Hatiara Road, Near CC2, Kolkata 700157<br/>GST: 19ABRCS8679J1Z2</p></div><div><h1>INVOICE</h1><p>#SN-2026-001</p></div></div><table className="table"><thead><tr><th>Item</th><th>Qty</th><th>Rate</th><th>Total</th></tr></thead><tbody><tr><td>Home Automation System</td><td>1</td><td>₹75,000</td><td>₹75,000</td></tr><tr><td>Installation</td><td>1</td><td>₹10,000</td><td>₹10,000</td></tr></tbody></table><div className="totals"><div><span>Subtotal</span><b>₹85,000</b></div><div><span>GST</span><b>₹15,300</b></div><div className="grand"><span>Total</span><b>₹1,00,300</b></div></div><div className="bank"><b>Bank Details</b><p>Company: SmartNibas Automation Pvt. Ltd.<br/>Bank: State Bank of India<br/>A/C No: 44734066415<br/>IFSC: SBIN0064519<br/>Branch: Mangaldeep</p></div><h3>Terms & Conditions</h3><p>All payments are subject to confirmation. Warranty and installation terms are applicable as per final quotation.</p></main></>}
+"use client";
+
+export default function Print() {
+  return (
+    <>
+      <div className="printbar no-print">
+        <button
+          className="btn"
+          onClick={() => {
+            if (typeof window !== "undefined") {
+              window.print();
+            }
+          }}
+        >
+          Direct Print
+        </button>
+
+        <a className="btn primary" href="/dashboard">
+          Back Dashboard
+        </a>
+      </div>
+
+      <main className="print-page">
+        <div className="sheet-head">
+          <div>
+            <img
+              src="/logo.png"
+              alt="SmartNibas"
+              style={{ width: "80px", marginBottom: "10px" }}
+            />
+
+            <h2>SmartNibas Automation Pvt. Ltd.</h2>
+
+            <p>
+              www.smartnibas.com
+              <br />
+              Aashiyana Bhaban, Door no 1B, Roypara Hatiara Road,
+              Near CC2, Kolkata 700157
+              <br />
+              GST: 19ABRCS8679J1Z2
+            </p>
+          </div>
+
+          <div>
+            <h1>INVOICE</h1>
+            <p>#SN-2026-001</p>
+          </div>
+        </div>
+
+        <table className="table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Qty</th>
+              <th>Rate</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Home Automation System</td>
+              <td>1</td>
+              <td>₹75,000</td>
+              <td>₹75,000</td>
+            </tr>
+
+            <tr>
+              <td>Installation</td>
+              <td>1</td>
+              <td>₹10,000</td>
+              <td>₹10,000</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div className="totals">
+          <div>
+            <span>Subtotal</span>
+            <b>₹85,000</b>
+          </div>
+
+          <div>
+            <span>GST</span>
+            <b>₹15,300</b>
+          </div>
+
+          <div className="grand">
+            <span>Total</span>
+            <b>₹1,00,300</b>
+          </div>
+        </div>
+
+        <div className="bank">
+          <b>Bank Details</b>
+
+          <p>
+            Company: SmartNibas Automation Pvt. Ltd.
+            <br />
+            Bank: State Bank of India
+            <br />
+            A/C No: 44734066415
+            <br />
+            IFSC: SBIN0064519
+            <br />
+            Branch: Mangaldeep
+          </p>
+        </div>
+
+        <h3>Terms & Conditions</h3>
+
+        <p>
+          All payments are subject to confirmation.
+          Warranty and installation terms are applicable
+          as per final quotation.
+        </p>
+      </main>
+    </>
+  );
+}
