@@ -15,40 +15,31 @@ export default function AppShell({
   const links = [
     ["dashboard", "Dashboard", "/dashboard"],
     ["invoice", "Create Invoice", "/invoices/new"],
-    ["admin", "Admin Approval", "/admin"],
+    ["admin", "Admin Approval", "/admin/users"],
     ["pricing", "Subscription", "/pricing"],
   ];
 
   return (
-    <div className="min-h-screen bg-slate-100 flex">
-      {/* Sidebar */}
-      <aside className="w-[260px] bg-[#0f172a] text-white p-5 shadow-xl">
-        <div className="mb-8">
-          <div className="flex items-center gap-3">
-            <img
-              src="/logo.png"
-              alt="logo"
-              className="w-12 h-12 object-contain"
-            />
-            <div>
-              <h2 className="font-bold text-lg">SmartNibas SaaS</h2>
-              <p className="text-xs text-slate-300">
-                Rental Billing Platform
-              </p>
-            </div>
+    <div className="app-shell">
+      <aside className="sidebar">
+        <div className="side-brand">
+          <img
+            src="/logo.png"
+            alt="SmartNibas"
+          />
+
+          <div>
+            <h3>SmartNibas SaaS</h3>
+            <span>Rental Billing Platform</span>
           </div>
         </div>
 
-        <nav className="space-y-2">
+        <nav className="menu">
           {links.map(([key, label, href]) => (
             <Link
               key={key}
               href={href}
-              className={`block px-4 py-3 rounded-xl transition-all ${
-                active === key
-                  ? "bg-cyan-500 text-white shadow-lg"
-                  : "hover:bg-slate-800 text-slate-300"
-              }`}
+              className={active === key ? "active" : ""}
             >
               {label}
             </Link>
@@ -56,11 +47,8 @@ export default function AppShell({
         </nav>
       </aside>
 
-      {/* Main */}
-      <main className="flex-1 p-8">
-        <div className="bg-white rounded-3xl shadow-md p-6 min-h-[85vh]">
-          {children}
-        </div>
+      <main className="main">
+        {children}
       </main>
     </div>
   );
