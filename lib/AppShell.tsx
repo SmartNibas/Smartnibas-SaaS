@@ -1,0 +1,4 @@
+export default function AppShell({children,active='dashboard'}:{children:React.ReactNode,active?:string}){
+ const links=[['dashboard','Dashboard','/dashboard'],['invoice','Create Invoice','/invoices/new'],['admin','Admin Approval','/admin'],['pricing','Subscription','/pricing'],['print','Print Preview','/print']];
+ return <div className="app-shell"><aside className="sidebar"><div className="side-brand"><img src="/logo.png"/><div><h3>SmartNibas SaaS</h3><span>Rental billing control</span></div></div><nav className="menu">{links.map(([id,label,href])=><a key={id} className={active===id?'active':''} href={href}>{label}</a>)}</nav><div className="side-card"><b>Admin Free Forever</b><p style={{color:'#bcecf5',lineHeight:1.6}}>Users need approval, 30-day free trial and active rental subscription.</p></div></aside><main className="main">{children}</main></div>
+}
