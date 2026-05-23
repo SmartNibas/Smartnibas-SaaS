@@ -17,7 +17,7 @@ export default function Login() {
 
         <button
           className="login-google"
-          onClick={() => signIn("google")}
+          onClick={() => signIn("google", { callbackUrl: "/dashboard" })
         >
           Continue with Google
         </button>
