@@ -1,1 +1,15 @@
-export default function Login(){return <div className="login-wrap"><div className="glass-card login-card"><img src="/logo.png"/><h1>Secure Login</h1><p style={{color:'#607089',lineHeight:1.7}}>Google OAuth ready login. After real credentials are added, users will need admin approval before accessing the billing workspace.</p><button className="btn primary" style={{width:'100%',marginTop:18}}>Continue with Google</button><a className="btn" style={{display:'block',marginTop:12}} href="/dashboard">Preview Dashboard</a><p style={{fontSize:12,color:'#607089',marginTop:20}}>Admin: free forever · Users: 30-day trial + paid rental</p></div></div>}
+export default function Login() {
+  return (
+    <main className="login-premium">
+      <section className="login-box">
+        <img src="/logo.png" alt="SmartNibas" />
+        <p className="eyebrow">SECURE ACCESS</p>
+        <h1>SmartNibas Login</h1>
+        <p>Google OAuth-ready login with admin approval before dashboard access.</p>
+        <button className="login-google">Continue with Google</button>
+        <a className="login-preview" href="/dashboard">Preview Dashboard</a>
+        <small>Admin free forever • Users get 30-day trial + rental</small>
+      </section>
+    </main>
+  );
+}
